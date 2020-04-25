@@ -1,0 +1,48 @@
+<div>
+    <h3>Entidades</h3>
+    <div class="alert alert-dark" role="alert">Cantidad de entidades: {{appComponent.ArrayEntidades.length}}</div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Posición Débito</th>
+                <th scope="col">Posición Crédito</th>
+                <th scope="col">Posición Final</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of appComponent.ArrayEntidades">
+                <th>{{ item.nombre }}</th>
+                <td>{{ item.posicionDebito }}</td>
+                <td>{{ item.posicionCredito }}</td>
+                <td>{{ item.posicionFinal }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <h3>Transacciones</h3>
+    <div class="alert alert-dark" role="alert">Cantidad de transacciones: {{appComponent.ArrayTransacciones.length}}</div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Block</th>
+                <th scope="col">Hash</th>
+                <th scope="col">Issuer</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of appComponent.ArrayTransacciones">
+                <th>{{ item.blockId }}</th>
+                <td>{{ item.hash }}</td>
+                <td>{{ item.issuer }}</td>
+                <td>{{ item.owner }}</td>
+                <td>{{ item.amount }}</td>
+                <td>{{ item.timeStamp }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
