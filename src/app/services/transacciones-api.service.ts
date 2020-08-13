@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class TransaccionesAPIService {
 
-  private api = "http://localhost:8080";
+  //private api = "http://localhost:8080";
+  private api = "http://bingodai.eastus.cloudapp.azure.com";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -18,6 +19,6 @@ export class TransaccionesAPIService {
   constructor(private httpClient: HttpClient) { }
 
   getData(): Observable<any[]> {
-    return this.httpClient.get<any[]>(this.api+ '/modeloCompleto');
+    return this.httpClient.get<any[]>(this.api+ '/jugadas');
   }
 }

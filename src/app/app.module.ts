@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableComponent } from './table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IgxGridModule } from 'igniteui-angular';
-import { GridComponent } from './grid/grid.component';
 
 const routes: Routes = [
   {
@@ -21,16 +20,14 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent,
-    GridComponent
+    TableComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    HttpClientModule,
-    IgxGridModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

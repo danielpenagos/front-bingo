@@ -10,22 +10,21 @@ import { AppComponent } from '../app.component';
 })
 export class TableComponent implements OnInit {
 
-
-
   appComponent: AppComponent;
 
-  constructor(private transaccionesAPI:TransaccionesAPIService, appComponent: AppComponent) { 
-
+  constructor(private transaccionesAPI: TransaccionesAPIService, appComponent: AppComponent) {
     this.appComponent = appComponent;
   }
 
-
   ngOnInit(): void {
     this.transaccionesAPI.getData().subscribe((res: any) => {
-      this.appComponent.ArrayTransacciones = res.transacciones;
-      this.appComponent.ArrayEntidades = res.entidades;
-      this.appComponent.transactionCount = this.appComponent.ArrayTransacciones.length;
+      this.appComponent.ArrayBalotasPorJugar = res.jugadas[0];
+      this.appComponent.ArrayB = res.jugadas[1];
+      this.appComponent.ArrayI = res.jugadas[2];
+      this.appComponent.ArrayN = res.jugadas[3];
+      this.appComponent.ArrayG = res.jugadas[4];
+      this.appComponent.ArrayO = res.jugadas[5];
+      this.appComponent.ultimaBalota = res.ultimaJugada;
     });
   }
-
 }

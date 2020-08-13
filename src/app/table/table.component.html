@@ -1,48 +1,47 @@
 <div>
-    <h3>Entidades</h3>
-    <div class="alert alert-dark" role="alert">Cantidad de entidades: {{appComponent.ArrayEntidades.length}}</div>
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Posición Débito</th>
-                <th scope="col">Posición Crédito</th>
-                <th scope="col">Posición Final</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of appComponent.ArrayEntidades">
-                <th>{{ item.nombre }}</th>
-                <td>{{ item.posicionDebito }}</td>
-                <td>{{ item.posicionCredito }}</td>
-                <td>{{ item.posicionFinal }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <h3>Balotas por jugar</h3>
+    <div class="alert alert-dark" role="alert">Cantidad de balotas: {{appComponent.ArrayBalotasPorJugar.length}}</div>
+    <div class="badge badge-primary text-wrap" style="width: 100%;">{{appComponent.ArrayBalotasPorJugar}}</div>
 </div>
 <div>
-    <h3>Transacciones</h3>
-    <div class="alert alert-dark" role="alert">Cantidad de transacciones: {{appComponent.ArrayTransacciones.length}}</div>
+    <h3>Balotas jugadas</h3>
+    <div>
+        <b>B   </b>{{appComponent.ArrayB}}</div>
+    <div>
+        <b>I   </b>{{appComponent.ArrayI}}</div>
+    <div>
+        <b>N   </b>{{appComponent.ArrayN}}</div>
+    <div>
+        <b>G   </b>{{appComponent.ArrayG}}</div>
+    <div>
+        <b>O   </b>{{appComponent.ArrayO}}</div>
+</div>
+<div>
+    <h3>Ultima Balota</h3>
+    <div class="alert alert-dark" role="alert"> {{appComponent.ultimaBalota}}</div>
+</div>
+<div *ngIf="appComponent.validandoCarton">
+    <h3>Validando Carton {{appComponent.cartonValidado}}</h3>
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">Block</th>
-                <th scope="col">Hash</th>
-                <th scope="col">Issuer</th>
-                <th scope="col">Owner</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Timestamp</th>
+                <th scope="col">B</th>
+                <th scope="col">I</th>
+                <th scope="col">N</th>
+                <th scope="col">G</th>
+                <th scope="col">O</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of appComponent.ArrayTransacciones">
-                <th>{{ item.blockId }}</th>
-                <td>{{ item.hash }}</td>
-                <td>{{ item.issuer }}</td>
-                <td>{{ item.owner }}</td>
-                <td>{{ item.amount }}</td>
-                <td>{{ item.timeStamp }}</td>
+            <tr *ngFor="let item of appComponent.carton">
+                <th>{{ item.colB }}</th>
+                <td>{{ item.colI }}</td>
+                <td>{{ item.colN }}</td>
+                <td>{{ item.colG }}</td>
+                <td>{{ item.colO }}</td>
             </tr>
         </tbody>
     </table>
+
+
 </div>

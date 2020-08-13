@@ -3,7 +3,8 @@ import * as SockJS from 'sockjs-client';
 import { AppComponent } from '../app.component';
 
 export class WebSocketAPI {
-    webSocketEndPoint: string = 'http://localhost:8080/ws';
+    //webSocketEndPoint: string = 'http://localhost:8080/ws';
+    webSocketEndPoint: string = 'http://bingodai.eastus.cloudapp.azure.com/ws';
     topic: string = "/topic/greetings";
     stompClient: any;
     appComponent: AppComponent;
